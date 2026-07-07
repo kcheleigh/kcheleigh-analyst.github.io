@@ -6,27 +6,57 @@
     <title>Khiva Cheleigh | Business Topology Analyst</title>
     <style>
         :root {
-            --bg: #ffffff;
             --text: #000000;
             --crimson: #8B1A1A;
             --subtle-border: #cccccc;
+            --overlay-light: rgba(255,255,255,0.85);
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* Background image with overlay */
         body {
-            background-color: var(--bg);
+            position: relative;
+            background-color: #ffffff; /* fallback */
             color: var(--text);
             font-family: Georgia, 'Times New Roman', serif;
             font-weight: 400;
             line-height: 1.7;
             letter-spacing: 0.01em;
-            padding: 3rem 2rem;
+            min-height: 100vh;
+        }
+
+        /* The background image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg'); /* ← CHANGE THIS to your image file name */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+
+        /* Content wrapper – white overlay for readability */
+        .page-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255,255,255,0.88); /* semi‑transparent white */
             max-width: 720px;
             margin: 0 auto;
+            padding: 3rem 2rem;
+            min-height: 100vh;
         }
+
         h1, h2, h3 {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: 400;
@@ -94,7 +124,7 @@
             font-weight: 400;
         }
         .highlight-box {
-            background: #f8f8f8;
+            background: rgba(0,0,0,0.03);
             border-left: 2px solid var(--crimson);
             padding: 1.2rem 1.5rem;
             margin: 1.5rem 0;
@@ -137,7 +167,7 @@
             letter-spacing: 0.05em;
         }
         @media (max-width: 500px) {
-            body {
+            .page-content {
                 padding: 2rem 1.5rem;
             }
             h1 {
@@ -151,66 +181,69 @@
 </head>
 <body>
 
-    <header>
-        <!-- Replace "logo.png" with your actual logo filename -->
-        <img src="KCCLogo3.png" alt="Khiva Cheleigh Logo" class="logo">
-        <h1>Khiva Cheleigh</h1>
-        <div class="subtitle">Business Topology Analyst</div>
-    </header>
+    <div class="page-content">
 
-    <hr class="divider">
+        <header>
+            <!-- Replace "logo.png" with your actual logo filename -->
+            <img src="logo.png" alt="Khiva Cheleigh Logo" class="logo">
+            <h1>Khiva Cheleigh</h1>
+            <div class="subtitle">Business Topology Analyst</div>
+        </header>
 
-    <section class="about">
-        <h2>What I Do</h2>
-        <p>I expose the hidden wiring of organizations. While consultants fix symptoms, I map the real structure—the informal pathways, decision bottlenecks, and dependency chains that silently bleed revenue. My work is non-obvious, forensic, and structural. I deliver what org charts and process docs never will: the truth of how your business actually operates.</p>
-    </section>
+        <hr class="divider">
 
-    <section class="methodology">
-        <h2>How I Work</h2>
-        <p>I don’t interview for opinions. I map from observable data: public signals, hiring patterns, customer complaints, org charts, earnings calls, Glassdoor reviews, and social listening. Then I reconstruct the actual topology—the hidden flows of money, information, and power. Every friction point is quantified. Every recommendation is a structural rewiring, not a bandage.</p>
-        <p>The output is a forensic map and a remediation topology. No slide decks. No jargon. Just the architectural truth and an execution roadmap.</p>
-    </section>
+        <section class="about">
+            <h2>What I Do</h2>
+            <p>I expose the hidden wiring of organizations. While consultants fix symptoms, I map the real structure—the informal pathways, decision bottlenecks, and dependency chains that silently bleed revenue. My work is non-obvious, forensic, and structural. I deliver what org charts and process docs never will: the truth of how your business actually operates.</p>
+        </section>
 
-    <section class="sample">
-        <h2>Sample Analysis: Public Demonstration</h2>
-        <p>The following is a surface-level topology scan of a well-known public failure—Blockbuster's collapse between 2000 and 2010. It was built entirely from public data and demonstrates the diagnostic lens I apply to client engagements.</p>
+        <section class="methodology">
+            <h2>How I Work</h2>
+            <p>I don’t interview for opinions. I map from observable data: public signals, hiring patterns, customer complaints, org charts, earnings calls, Glassdoor reviews, and social listening. Then I reconstruct the actual topology—the hidden flows of money, information, and power. Every friction point is quantified. Every recommendation is a structural rewiring, not a bandage.</p>
+            <p>The output is a forensic map and a remediation topology. No slide decks. No jargon. Just the architectural truth and an execution roadmap.</p>
+        </section>
 
-        <div class="highlight-box">
-            <p><strong>Friction 1: Late Fee Dependency Loop.</strong> Revenue model relied on a pain point (late fees) that customers despised. The topology had a single revenue node with no redundancy. When Netflix removed that friction entirely, Blockbuster’s core revenue node collapsed because it had been structurally optimized for extraction, not retention.</p>
+        <section class="sample">
+            <h2>Sample Analysis: Public Demonstration</h2>
+            <p>The following is a surface-level topology scan of a well-known public failure—Blockbuster's collapse between 2000 and 2010. It was built entirely from public data and demonstrates the diagnostic lens I apply to client engagements.</p>
+
+            <div class="highlight-box">
+                <p><strong>Friction 1: Late Fee Dependency Loop.</strong> Revenue model relied on a pain point (late fees) that customers despised. The topology had a single revenue node with no redundancy. When Netflix removed that friction entirely, Blockbuster’s core revenue node collapsed because it had been structurally optimized for extraction, not retention.</p>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Friction 2: Physical Inventory Bottleneck.</strong> Store inventory was a fixed-capacity node. High-demand new releases had a 72-hour availability window before stock-out. The supply chain topology had no dynamic redistribution pathway, so 20% of titles generated 80% of foot traffic that frequently went unsatisfied.</p>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Friction 3: Decision-Making Rigidity.</strong> A centralized franchising model meant store-level operators had zero autonomy to adjust pricing, layout, or inventory. The feedback loop from customer dissatisfaction to corporate strategy took quarters, while Netflix iterated in weeks. Topology had a single command node that was too slow for market shifts.</p>
+            </div>
+
+            <p class="disclaimer">This analysis is a demonstration of method, built from historical public sources. No client data was used.</p>
+        </section>
+
+        <section class="services">
+            <h2>Engagements</h2>
+            <ul>
+                <li><strong>Business Topology Diagnostic</strong> — Full structural map, friction quantification, remediation topology, and 90-day roadmap. 5-day delivery.</li>
+                <li><strong>Ecosystem Blind Spot Audit</strong> — External dependency mapping, single points of failure, and competitive topology shifts.</li>
+                <li><strong>Advisory Retainer</strong> — Ongoing structural intelligence for scaling, M&A, or restructuring.</li>
+            </ul>
+        </section>
+
+        <hr class="divider">
+
+        <section class="beta">
+            <h2>Beta Program</h2>
+            <p>I am currently hardening my methodology with a limited number of beta clients at a significantly reduced rate. In exchange for a candid testimonial and permission to use anonymized structural insights, you receive the full diagnostic engagement.</p>
+            <p>If you run a company of 5–100 people and suspect your internal wiring is costing more than you can see, request a free surface topology scan. No obligation. I’ll deliver a one-page friction map built from public data. If it’s not useful, we part ways.</p>
+            <p>Contact: <a href="mailto:kcheleigh@email.com">kcheleigh@email.com</a></p>
+        </section>
+
+        <div class="footer">
+            &copy; 2026 Khiva Cheleigh. Sovereignty over structure.
         </div>
 
-        <div class="highlight-box">
-            <p><strong>Friction 2: Physical Inventory Bottleneck.</strong> Store inventory was a fixed-capacity node. High-demand new releases had a 72-hour availability window before stock-out. The supply chain topology had no dynamic redistribution pathway, so 20% of titles generated 80% of foot traffic that frequently went unsatisfied.</p>
-        </div>
-
-        <div class="highlight-box">
-            <p><strong>Friction 3: Decision-Making Rigidity.</strong> A centralized franchising model meant store-level operators had zero autonomy to adjust pricing, layout, or inventory. The feedback loop from customer dissatisfaction to corporate strategy took quarters, while Netflix iterated in weeks. Topology had a single command node that was too slow for market shifts.</p>
-        </div>
-
-        <p class="disclaimer">This analysis is a demonstration of method, built from historical public sources. No client data was used.</p>
-    </section>
-
-    <section class="services">
-        <h2>Engagements</h2>
-        <ul>
-            <li><strong>Business Topology Diagnostic</strong> — Full structural map, friction quantification, remediation topology, and 90-day roadmap. 5-day delivery.</li>
-            <li><strong>Ecosystem Blind Spot Audit</strong> — External dependency mapping, single points of failure, and competitive topology shifts.</li>
-            <li><strong>Advisory Retainer</strong> — Ongoing structural intelligence for scaling, M&A, or restructuring.</li>
-        </ul>
-    </section>
-
-    <hr class="divider">
-
-    <section class="beta">
-        <h2>Beta Program</h2>
-        <p>I am currently hardening my methodology with a limited number of beta clients at a significantly reduced rate. In exchange for a candid testimonial and permission to use anonymized structural insights, you receive the full diagnostic engagement.</p>
-        <p>If you run a company of 5–100 people and suspect your internal wiring is costing more than you can see, request a free surface topology scan. No obligation. I’ll deliver a one-page friction map built from public data. If it’s not useful, we part ways.</p>
-        <p>Contact: <a href="mailto:kcheleigh.analyst@gmail.com">kcheleigh.analyst@gmail.com</a></p>
-    </section>
-
-    <div class="footer">
-        &copy; 2026 Khiva Cheleigh. Sovereignty over structure.
-    </div>
-
+    </div><!-- end .page-content -->
 </body>
 </html>

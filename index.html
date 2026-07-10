@@ -70,6 +70,20 @@
             font-weight: 400;
             opacity: 0.8;
         }
+        /* Navigation */
+        .top-nav {
+            text-align: right;
+            margin-bottom: 1.5rem;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .top-nav a {
+            color: var(--crimson);
+            text-decoration: none;
+            border-bottom: 1px solid var(--crimson);
+            margin-left: 1.5rem;
+        }
         section {
             margin-bottom: 2.8rem;
         }
@@ -141,27 +155,23 @@
         a:hover {
             opacity: 0.8;
         }
-
         .logo {
             display: block;
             max-width: 160px;
             height: auto;
             margin-bottom: 1.2rem;
         }
-
         .divider svg {
             display: block;
             width: 100%;
             height: auto;
         }
-
         .topology-diagram {
             max-width: 100%;
             height: auto;
             margin: 1.5rem 0;
             display: block;
         }
-
         .footer {
             margin-top: 4rem;
             font-size: 0.8rem;
@@ -184,6 +194,12 @@
 <body>
 
 <div class="page-content">
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Paywall</a>
+    </nav>
 
     <img src="KCCLogo.svg" alt="Khiva Cheleigh Logo" class="logo">
 
@@ -218,15 +234,12 @@
         <!-- Complex living topology diagram -->
         <svg class="topology-diagram" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Complex business topology diagram showing formal and informal flows">
             <defs>
-                <!-- Arrowhead for formal flows -->
                 <marker id="arrowCrimson" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                     <path d="M0,0 L10,5 L0,10 Z" fill="#8B1A1A"/>
                 </marker>
-                <!-- Arrowhead for informal / backchannel flows -->
                 <marker id="arrowRedDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                     <path d="M0,0 L10,5 L0,10 Z" fill="#8B1A1A" opacity="0.8"/>
                 </marker>
-                <!-- Glow filter for pulsing bottleneck -->
                 <filter id="glow">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                     <feMerge>
@@ -234,7 +247,6 @@
                         <feMergeNode in="SourceGraphic"/>
                     </feMerge>
                 </filter>
-                <!-- Keyframes for CEO bottleneck pulse -->
                 <style>
                     @keyframes bottleneckPulse {
                         0% { r: 22; opacity: 0.8; }
@@ -250,97 +262,65 @@
                 </style>
             </defs>
 
-            <!-- ========== CONNECTIONS (background layer) ========== -->
-
-            <!-- Formal flows: Marketing → Sales (revenue handoff) -->
+            <!-- Connections -->
             <line x1="170" y1="100" x2="350" y2="100" stroke="#8B1A1A" stroke-width="2" marker-end="url(#arrowCrimson)"/>
-            <!-- Sales → Onboarding (activation) -->
             <line x1="410" y1="120" x2="410" y2="220" stroke="#8B1A1A" stroke-width="2" marker-end="url(#arrowCrimson)"/>
-            <!-- Onboarding → Customer Success (retention) -->
             <line x1="410" y1="280" x2="410" y2="380" stroke="#8B1A1A" stroke-width="2" marker-end="url(#arrowCrimson)"/>
-            <!-- Product → Sales (feature support) -->
             <line x1="560" y1="100" x2="470" y2="100" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrowCrimson)"/>
-            <!-- Product → Onboarding (implementation) -->
             <line x1="580" y1="140" x2="450" y2="230" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrowCrimson)"/>
-            <!-- Operations → Onboarding (logistics) -->
             <line x1="170" y1="280" x2="330" y2="260" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowCrimson)"/>
-            <!-- Operations → Customer Success (post‑sale support) -->
             <line x1="170" y1="320" x2="330" y2="390" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowCrimson)"/>
-            <!-- Finance → Sales (budget/approval) -->
             <line x1="510" y1="450" x2="390" y2="140" stroke="#8B1A1A" stroke-width="1.2" stroke-dasharray="2,4" marker-end="url(#arrowCrimson)"/>
-            <!-- Finance → Product -->
             <line x1="530" y1="450" x2="580" y2="140" stroke="#8B1A1A" stroke-width="1.2" stroke-dasharray="2,4" marker-end="url(#arrowCrimson)"/>
 
-            <!-- Informal / Backchannel flows (red dashed) -->
-            <!-- Sales → Product (shadow feature promises) -->
+            <!-- Informal backchannels -->
             <line x1="380" y1="80" x2="560" y2="80" stroke="#8B1A1A" stroke-width="1.8" stroke-dasharray="6,4" opacity="0.7" marker-end="url(#arrowRedDash)"/>
-            <!-- CEO → Sales (direct interference) -->
             <line x1="410" y1="45" x2="410" y2="75" stroke="#8B1A1A" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.7"/>
-            <!-- CEO → Product -->
             <line x1="425" y1="45" x2="580" y2="80" stroke="#8B1A1A" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.7"/>
-            <!-- CEO → Operations -->
             <line x1="395" y1="45" x2="170" y2="250" stroke="#8B1A1A" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.7"/>
-            <!-- Customer Success manual report to CEO -->
             <line x1="410" y1="400" x2="410" y2="430" stroke="#8B1A1A" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.7"/>
             <line x1="410" y1="430" x2="410" y2="470" stroke="#8B1A1A" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.7"/>
 
-            <!-- ========== NODES ========== -->
-
-            <!-- Marketing -->
+            <!-- Nodes -->
             <circle cx="130" cy="100" r="24" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="130" y="105" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="9" font-weight="400">Mktg</text>
 
-            <!-- Sales -->
             <circle cx="390" cy="100" r="26" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="390" y="105" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="10" font-weight="400">Sales</text>
 
-            <!-- Product -->
             <circle cx="620" cy="100" r="24" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="620" y="105" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="9" font-weight="400">Prod</text>
 
-            <!-- Onboarding -->
             <circle cx="410" cy="250" r="26" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="410" y="255" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="9" font-weight="400">Onbrd</text>
 
-            <!-- Customer Success -->
             <circle cx="410" cy="410" r="26" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="410" y="415" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="9" font-weight="400">CS</text>
 
-            <!-- Operations -->
             <circle cx="130" cy="280" r="26" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="130" y="285" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="9" font-weight="400">Ops</text>
 
-            <!-- Finance -->
             <circle cx="520" cy="470" r="24" fill="none" stroke="#8B1A1A" stroke-width="2"/>
             <text x="520" y="475" text-anchor="middle" fill="#8B1A1A" font-family="Helvetica, sans-serif" font-size="8" font-weight="400">Fin</text>
 
-            <!-- CEO (bottleneck) with pulsing ring -->
+            <!-- CEO bottleneck with pulse -->
             <circle cx="410" cy="35" r="22" fill="#8B1A1A" opacity="0.9"/>
             <circle cx="410" cy="35" r="22" fill="none" stroke="#8B1A1A" stroke-width="2" class="bottleneck-ring" filter="url(#glow)"/>
             <text x="410" y="40" text-anchor="middle" fill="white" font-family="Helvetica, sans-serif" font-size="9" font-weight="400">CEO</text>
 
-            <!-- ========== ANIMATED PARTICLES ========== -->
-
-            <!-- Particle 1: Main revenue flow Marketing → Sales → Onboarding → CS -->
+            <!-- Animated particles -->
             <circle r="3" class="flow-particle">
                 <animateMotion dur="6s" repeatCount="indefinite" path="M130,100 L390,100 L410,250 L410,410" />
             </circle>
-
-            <!-- Particle 2: Backchannel flow Sales → Product (informal) -->
             <circle r="3" class="flow-particle">
                 <animateMotion dur="4s" repeatCount="indefinite" path="M390,80 L620,80" />
             </circle>
-
-            <!-- Particle 3: Product → Onboarding (feature delivery) -->
             <circle r="3" class="flow-particle">
                 <animateMotion dur="5s" repeatCount="indefinite" path="M600,120 L430,240" />
             </circle>
-
-            <!-- Particle 4: CEO manual report from CS (red flow) -->
             <circle r="3" fill="#8B1A1A">
                 <animateMotion dur="7s" repeatCount="indefinite" path="M410,430 L410,470" />
             </circle>
-
         </svg>
 
         <div class="highlight-box">
@@ -365,6 +345,7 @@
             <li><strong>Ecosystem Blind Spot Audit</strong> — External dependency mapping, single points of failure, and competitive topology shifts.</li>
             <li><strong>Advisory Retainer</strong> — Ongoing structural intelligence for scaling, M&A, or restructuring.</li>
         </ul>
+        <p style="margin-top:1rem;"><strong><a href="services.html">View pricing, beta eligibility &amp; paywall details →</a></strong></p>
     </section>
 
     <div class="divider">
@@ -379,6 +360,7 @@
         <h2>Beta Program</h2>
         <p>I am currently hardening my methodology with a limited number of beta clients at a significantly reduced rate. In exchange for a candid testimonial and permission to use anonymized structural insights, you receive the full diagnostic engagement.</p>
         <p>If you run a company of 5–100 people and suspect your internal wiring is costing more than you can see, request a free surface topology scan. No obligation. I’ll deliver a one-page friction map built from public data. If it’s not useful, we part ways.</p>
+        <p><strong><a href="services.html">Apply for the Beta Program →</a></strong></p>
         <p>Contact: <a href="mailto:kcheleigh.analyst@gmail.com">kcheleigh.analyst@gmail.com</a></p>
     </section>
 
@@ -386,6 +368,6 @@
         &copy; 2026 Khiva Cheleigh. Sovereignty over structure.
     </div>
 
-</div><!-- end .page-content -->
+</div>
 </body>
 </html>

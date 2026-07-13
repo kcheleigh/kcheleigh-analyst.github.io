@@ -1,141 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BPMN & Topology Sample | Your Name</title>
-  <style>
-    /* Simple, clean styling – matches your professional look */
-    body {
-      margin: 0;
-      background: #f8fafc;
-      font-family: system-ui, -apple-system, sans-serif;
-      color: #1e293b;
-    }
-
-    /* Navigation bar */
-    nav {
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      text-decoration: none;
-      color: #475569;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #6366f1;
-    }
-    .brand {
-      font-weight: 700;
-      color: #1e293b;
-      margin-right: auto;
-    }
-
-    /* Content area */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 0.5rem;
-    }
-    .subtitle {
-      color: #64748b;
-      margin-bottom: 2rem;
-    }
-
-    .diagram-box {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      margin: 2rem 0;
-    }
-    .diagram-box img, .diagram-box svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Call to action */
-    .cta {
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
-    .cta p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    .cta a {
-      background: #6366f1;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-    }
-    .cta a:hover {
-      background: #4f46e5;
-    }
-
-    /* Pattern callouts inline (you already have them in the SVG) */
-    .notice {
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 1rem 0;
-      text-align: left;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPMN & Topology Sample | Khiva Cheleigh – Business Topology Analyst</title>
+    <style>
+        :root {
+            --text: #000000;
+            --crimson: #8B1A1A;
+            --subtle-border: #cccccc;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            position: relative;
+            background-color: #ffffff;
+            color: var(--text);
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        .page-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255,255,255,0.88);
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            min-height: 100vh;
+        }
+        /* Navigation */
+        .top-nav {
+            text-align: right;
+            margin-bottom: 1.5rem;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .top-nav a {
+            color: var(--crimson);
+            text-decoration: none;
+            border-bottom: 1px solid var(--crimson);
+            margin-left: 1.5rem;
+        }
+        .top-nav a.active {
+            color: var(--crimson);
+            font-weight: 600;
+            border-bottom: 2px solid var(--crimson);
+        }
+        h1, h2, h3 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: var(--text);
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: var(--crimson);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.06em;
+        }
+        .subtitle {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        .diagram-box {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        .diagram-box svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .notice {
+            background: #f9f9f9;
+            border-left: 4px solid var(--crimson);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .notice strong {
+            color: var(--crimson);
+        }
+        .cta-box {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 2rem;
+            border: 1px solid var(--crimson);
+            background: rgba(139,26,26,0.03);
+        }
+        .cta-box p {
+            margin-bottom: 1rem;
+        }
+        .cta-box a {
+            display: inline-block;
+            background: var(--crimson);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+        .cta-box a:hover {
+            opacity: 0.85;
+        }
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .page-content {
+                padding: 2rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <span class="brand">🏗️ Your Business Topology</span>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="bpmn-analysis.html" style="color:#6366f1; font-weight:600;">BPMN Sample</a>
-  </nav>
+<div class="page-content">
 
-  <div class="container">
+    <!-- Navigation bar -->
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Paywall</a>
+        <a href="bpmn-sample.html" class="active">BPMN Sample</a>
+    </nav>
+
     <h1>Freelance Client Approval — BPMN Topology Map</h1>
-    <p class="subtitle">
-      A real cross‑company process modelled with BPMN, annotated with the four topology patterns I uncover for clients: hidden bottlenecks, message wait states, implicit sub‑contracting, and data inconsistency.
-    </p>
+    <div class="subtitle">A cross‑company process modelled with BPMN, annotated with the four structural patterns I uncover for every client</div>
 
-    <!-- The SVG diagram – you can either embed the whole SVG code or link to it as an image. 
-         I recommend embedding the SVG directly here. -->
+    <p>This diagram maps the exact real‑world flow of a freelance client approval process – from initial request through payment. I have overlaid the four topology patterns that are invisible on a standard process map: <strong>hidden bottlenecks</strong>, <strong>message wait states</strong>, <strong>implicit sub‑contracting</strong>, and <strong>data inconsistency</strong>.</p>
+
     <div class="diagram-box">
-      <!-- Paste the entire SVG code from my previous message below this line -->
-      <svg ...>
-        ... (copy the full SVG code here) ...
-      </svg>
+        <!-- Inline SVG BPMN diagram with topology annotations -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="Helvetica, Arial, sans-serif" font-size="11">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L10,5 L0,10 Z" fill="#555"/>
+                </marker>
+                <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L10,5 L0,10 Z" fill="#8B1A1A"/>
+                </marker>
+            </defs>
+
+            <!-- Lanes -->
+            <rect x="20" y="30" width="860" height="130" fill="#fcf9f9" stroke="#ccc" stroke-dasharray="4,2" rx="3"/>
+            <text x="35" y="55" font-weight="bold" fill="#8B1A1A">Client Company (Acme Corp)</text>
+
+            <rect x="20" y="190" width="860" height="130" fill="#fcf9f9" stroke="#ccc" stroke-dasharray="4,2" rx="3"/>
+            <text x="35" y="215" font-weight="bold" fill="#8B1A1A">Freelancer (You)</text>
+
+            <rect x="20" y="350" width="860" height="130" fill="#fcf9f9" stroke="#ccc" stroke-dasharray="4,2" rx="3"/>
+            <text x="35" y="375" font-weight="bold" fill="#8B1A1A">Third‑Party Platform (e.g., Upwork/Stripe)</text>
+
+            <rect x="20" y="510" width="860" height="70" fill="#fcf9f9" stroke="#ccc" stroke-dasharray="4,2" rx="3"/>
+            <text x="35" y="535" font-weight="bold" fill="#8B1A1A">External Factor (Client’s Finance Dept.)</text>
+
+            <!-- Flow objects (Tasks) -->
+            <!-- Client lane -->
+            <rect x="100" y="70" width="120" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="160" y="95" text-anchor="middle">Submit Request</text>
+
+            <rect x="310" y="70" width="130" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="375" y="95" text-anchor="middle">Approve Proposal</text>
+
+            <rect x="530" y="70" width="130" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="595" y="95" text-anchor="middle">Review &amp; Pay Invoice</text>
+
+            <!-- Freelancer lane -->
+            <rect x="100" y="230" width="130" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="165" y="255" text-anchor="middle">Receive Brief</text>
+
+            <rect x="310" y="230" width="140" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="380" y="255" text-anchor="middle">Create Proposal &amp; Map</text>
+
+            <rect x="530" y="230" width="130" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="595" y="255" text-anchor="middle">Deliver Work</text>
+
+            <rect x="700" y="230" width="130" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="765" y="255" text-anchor="middle">Issue Invoice</text>
+
+            <!-- Third-party lane -->
+            <rect x="530" y="390" width="130" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="595" y="415" text-anchor="middle">Process Payment</text>
+
+            <!-- Finance lane (external) -->
+            <rect x="310" y="540" width="140" height="40" rx="4" fill="white" stroke="#333"/>
+            <text x="380" y="565" text-anchor="middle">Internal Budget Hold</text>
+
+            <!-- Sequence flows (formal) -->
+            <line x1="220" y1="90" x2="310" y2="90" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <line x1="440" y1="90" x2="530" y2="90" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <line x1="595" y1="90" x2="595" y2="230" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/> <!-- down to freelancer -->
+            <line x1="530" y1="250" x2="530" y2="390" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/> <!-- to platform -->
+            <line x1="660" y1="410" x2="700" y2="250" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/> <!-- back to freelancer -->
+            <line x1="380" y1="560" x2="380" y2="410" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/> <!-- finance to platform -->
+            <line x1="380" y1="560" x2="380" y2="250" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/> <!-- finance to freelancer? not typical; just show wait state -->
+
+            <!-- Friction annotations (crimson, dashed) -->
+            <!-- Hidden bottleneck: Approve Proposal -->
+            <rect x="300" y="105" width="160" height="35" fill="none" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5,3" rx="4"/>
+            <text x="380" y="125" text-anchor="middle" fill="#8B1A1A" font-size="9" font-weight="bold">Hidden Bottleneck</text>
+            <!-- Message wait state: between Proposal and Delivery -->
+            <path d="M445,150 L445,220" fill="none" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-red)"/>
+            <text x="450" y="190" fill="#8B1A1A" font-size="9">48h wait</text>
+            <!-- Implicit sub-contracting: platform processing -->
+            <rect x="520" y="380" width="160" height="60" fill="none" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5,3" rx="4"/>
+            <text x="600" y="405" text-anchor="middle" fill="#8B1A1A" font-size="9" font-weight="bold">Implicit Sub‑Contracting</text>
+            <!-- Data inconsistency: finance hold -->
+            <rect x="290" y="530" width="180" height="60" fill="none" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5,3" rx="4"/>
+            <text x="380" y="555" text-anchor="middle" fill="#8B1A1A" font-size="9" font-weight="bold">Data Inconsistency</text>
+
+            <!-- Legend -->
+            <rect x="20" y="480" width="300" height="25" rx="3" fill="#fff" stroke="#ccc"/>
+            <text x="30" y="497" fill="#8B1A1A" font-size="9">—— Topology Patterns (red) —— Formal flow (black)</text>
+        </svg>
     </div>
 
     <div class="notice">
-      <strong>🔍 What you’re seeing:</strong> This diagram maps the exact path of a freelance client approval process across two companies and a third‑party partner. I've highlighted four structural patterns that every business topology analysis must expose — these are the same patterns I deliver in paid engagements.
+        <strong>🔍 What you’re seeing:</strong> This BPMN diagram maps a real cross‑company freelance approval process. I've highlighted the four structural patterns every business topology analysis must expose – hidden bottlenecks, message wait states, implicit sub‑contracting, and data inconsistency. These are the same patterns I identify and quantify for paying clients.
     </div>
 
-    <div class="cta">
-      <p>Ready to see this applied to <strong>your</strong> business ecosystem?</p>
-      <a href="services.html">Go to the Service Page →</a>
+    <div class="cta-box">
+        <p>Ready to see this applied to <strong>your</strong> business ecosystem?</p>
+        <a href="services.html">Go to the Services Page →</a>
     </div>
-  </div>
+
+    <div class="footer">
+        &copy; 2026 Khiva Cheleigh. Sovereignty over structure.
+    </div>
+
+</div>
 </body>
 </html>

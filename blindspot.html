@@ -342,7 +342,7 @@
 
 <script>
     // Replace this with your actual Google Calendar appointment schedule URL
-    const googleCalendarBookingLink = "https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID";
+    const googleCalendarBookingLink = "https://calendar.app.google/JVcHEc9P5BzZriCX7";
 
     document.getElementById('blindspotForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -370,25 +370,25 @@
         if (score <= 1) {
             className = '';
             heading = 'Low Blind Spot Risk – But Keep Digging';
-            message = 'Your process landscape looks relatively smooth. However, even in healthy systems, one hidden ridge can slow everything down. A 20‑minute Topographical Blind Spot Audit often reveals a subtle delay that nobody has measured yet.';
-            ctaText = 'Book Your Free 20‑Min Audit';
+            message = 'Your process landscape looks relatively smooth. However, even in healthy systems, one hidden ridge can slow everything down. A Topographical Blind Spot Audit often reveals a subtle delay that nobody has measured yet.';
+            ctaText = 'Book Your Free Audit';
         } else if (score <= 3) {
             className = 'warning';
             heading = 'Moderate Risk – At Least One Hidden Bottleneck Likely';
             message = 'You’re showing classic signs of invisible waiting, shadow dependencies, or un‑mapped handoffs. In companies I analyze with similar profiles, 20–30% of process lead time vanishes into these blind spots. Let’s pinpoint yours.';
-            ctaText = 'Book a Free 20‑Min Blind Spot Audit';
+            ctaText = 'Book a Free Blind Spot Audit';
         } else {
             className = 'critical';
             heading = 'High Risk – Multiple Process Fractures Detected';
             message = 'Your answers suggest tangled accountability, swampy handoffs, and unmeasured delays. This pattern typically costs organizations 35%+ of their throughput capacity without anyone seeing it. A 20‑minute audit will identify the #1 fracture and what it’s costing you.';
-            ctaText = 'Schedule Your Free 20‑Min Audit Now';
+            ctaText = 'Schedule Your Free Audit Now';
         }
         
         resultBox.className = 'result visible ' + className;
         resultBox.innerHTML = `
             <h3>${heading}</h3>
             <p>${message}</p>
-            <a href="${googleCalendarBookingLink}" target="_blank" class="booking-link">
+            <a href="${https://calendar.app.google/JVcHEc9P5BzZriCX7}" target="_blank" class="booking-link">
                 🔍 ${ctaText} →
             </a>
             <p style="font-size:0.85rem; margin-top:1rem; opacity:0.8;">

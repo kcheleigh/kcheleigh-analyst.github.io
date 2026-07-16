@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khiva Cheleigh | Business Topology Analyst</title>
+    <title>Process Blind Spot Self‑Check | Khiva Cheleigh – Business Topology Analyst</title>
     <style>
         :root {
             --text: #000000;
@@ -84,6 +84,10 @@
             border-bottom: 1px solid var(--crimson);
             margin-left: 1.5rem;
         }
+        .top-nav a.active {
+            font-weight: 600;
+            border-bottom: 2px solid var(--crimson);
+        }
         section {
             margin-bottom: 2.8rem;
         }
@@ -107,45 +111,6 @@
             color: var(--text);
             opacity: 0.95;
         }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        ul li {
-            margin-bottom: 0.9rem;
-            position: relative;
-            padding-left: 1.8rem;
-            font-size: 1.05rem;
-            opacity: 0.95;
-        }
-        ul li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--crimson);
-            font-weight: 400;
-        }
-        .highlight-box {
-            background-color: rgba(0,0,0,0.02);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='1' fill='%238B1A1A' opacity='0.3'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%238B1A1A' stroke-width='0.3' opacity='0.15'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%238B1A1A' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            border-left: 2px solid var(--crimson);
-            padding: 1.2rem 1.5rem;
-            margin: 1.5rem 0;
-            font-size: 1rem;
-        }
-        .highlight-box p {
-            margin-bottom: 0.5rem;
-            opacity: 1;
-            color: var(--text);
-        }
-        .disclaimer {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            font-style: italic;
-            margin-top: 0.6rem;
-            color: var(--text);
-        }
         a {
             color: var(--crimson);
             text-decoration: none;
@@ -166,17 +131,109 @@
             width: 100%;
             height: auto;
         }
-        .topology-diagram {
-            max-width: 100%;
-            height: auto;
-            margin: 1.5rem 0;
+
+        /* Quiz-specific styles – blend with sovereign aesthetic */
+        .self-check-card {
+            background: #ffffff;
+            border: 1px solid var(--crimson);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .question {
+            margin-bottom: 2rem;
+        }
+        .question p {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: var(--text);
+            opacity: 1;
+            font-family: Georgia, serif;
+        }
+        .options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            border: 1px solid var(--subtle-border);
+            transition: all 0.2s;
+            color: var(--text);
+            font-family: Georgia, serif;
+            font-size: 0.95rem;
+        }
+        .options label:hover {
+            border-color: var(--crimson);
+            background: rgba(139,26,26,0.03);
+        }
+        .options input[type="radio"] {
+            accent-color: var(--crimson);
+        }
+        .btn {
+            display: inline-block;
+            background: var(--crimson);
+            color: #ffffff;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 400;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            text-align: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .btn:hover {
+            opacity: 0.85;
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: none;
+            color: var(--text);
+            font-family: Georgia, serif;
+        }
+        .result.visible {
             display: block;
+        }
+        .result.warning {
+            background: #FFF8E1;
+            border: 1px solid #FFA000;
+        }
+        .result.critical {
+            background: #FFEBEE;
+            border: 1px solid var(--crimson);
+        }
+        .result h3 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            color: var(--crimson);
+        }
+        .booking-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--crimson);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--crimson);
         }
         .footer {
             margin-top: 4rem;
             font-size: 0.8rem;
             opacity: 0.6;
             letter-spacing: 0.05em;
+            text-align: center;
         }
         @media (max-width: 500px) {
             .page-content {
@@ -187,6 +244,9 @@
             }
             .logo {
                 max-width: 130px;
+            }
+            .self-check-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -200,7 +260,7 @@
         <a href="index.html">Home</a>
         <a href="services.html">Services &amp; Paywall</a>
         <a href="bpmn-sample.html">BPMN Sample</a>
-        <a href="blindspot.html">Blind Spot Self-Check</a>
+        <a href="blindspot.html" class="active">Blind Spot Self‑Check</a>
     </nav>
 
     <img src="KCCLogo.svg" alt="Khiva Cheleigh Logo" class="logo">
@@ -218,236 +278,12 @@
         </svg>
     </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Blind Spot Self-Check | Khiva Cheleigh Business Topology Analyst</title>
-    <meta name="description" content="Uncover hidden bottlenecks in your operations in 90 seconds. Free 20-minute Topographical Blind Spot Audit – book via Google Calendar.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <section>
+        <h2>Process Blind Spot Self‑Check</h2>
+        <p style="margin-bottom:2rem;">90 seconds. 5 questions. Uncover one invisible bottleneck hiding in your operations.</p>
 
-        body {
-            font-family: Georgia, 'Times New Roman', serif;   /* body text */
-            background-color: #FBF7EF;          /* warm cream fallback */
-            background-image: url('background.png');
-            background-repeat: repeat;
-            background-size: auto;
-            background-blend-mode: multiply;     /* merges texture with cream */
-            color: #000000;                      /* black text */
-            line-height: 1.6;
-        }
-
-        /* Headings use Helvetica */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: Helvetica, Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 720px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ---- HEADER ---- */
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .logo {
-            margin-bottom: 1rem;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 0.3rem;
-            /* already Helvetica from global heading rule */
-        }
-
-        .analyst-tag {
-            font-size: 1rem;
-            color: #000000;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            font-family: Georgia, serif;   /* explicitly Georgia, like body */
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #000000;
-            font-family: Georgia, serif;
-        }
-
-        /* crimson svg divider */
-        .divider {
-            display: flex;
-            justify-content: center;
-            margin: 1.5rem 0 2rem 0;
-        }
-
-        .self-check {
-            background: #ffffff;            /* white card on cream background */
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 1px solid #DC143C;      /* crimson border around card */
-        }
-
-        .question {
-            margin-bottom: 2rem;
-        }
-
-        .question p {
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            font-size: 1.05rem;
-            color: #000000;
-            font-family: Georgia, serif;
-        }
-
-        .options {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .options label {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            transition: all 0.2s;
-            color: #000000;
-            font-family: Georgia, serif;
-        }
-
-        .options label:hover {
-            border-color: #DC143C;           /* crimson hover */
-            background: #FFF0F0;
-        }
-
-        .options input[type="radio"] {
-            accent-color: #DC143C;
-        }
-
-        /* Submit button: Helvetica to match headings */
-        .btn {
-            display: inline-block;
-            background: #DC143C;              /* crimson button */
-            color: #ffffff;
-            border: none;
-            padding: 0.9rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.2s;
-            text-align: center;
-            font-family: Helvetica, Arial, sans-serif;
-        }
-
-        .btn:hover {
-            background: #A4001C;              /* darker crimson */
-        }
-
-        .result {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            border-radius: 12px;
-            display: none;
-            color: #000000;
-            font-family: Georgia, serif;
-        }
-
-        .result.visible {
-            display: block;
-        }
-
-        .result.warning {
-            background: #FFF8E1;
-            border: 2px solid #FFA000;
-        }
-
-        .result.critical {
-            background: #FFEBEE;
-            border: 2px solid #DC143C;
-        }
-
-        /* crimson links – keep Georgia but bold weight */
-        a, .booking-link {
-            color: #DC143C;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border 0.2s;
-            font-family: Georgia, serif;
-        }
-
-        a:hover, .booking-link:hover {
-            border-bottom-color: #DC143C;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            color: #000000;
-            font-family: Georgia, serif;
-        }
-
-        footer a {
-            color: #DC143C;
-            text-decoration: none;
-        }
-
-        /* minor crimson accent line inside card */
-        .section-divider {
-            display: block;
-            margin: 1rem 0;
-        }
-
-        /* Ensure any generated heading inside result also uses Helvetica */
-        .result h3 {
-            font-family: Helvetica, Arial, sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <!-- Master-level SVG logo -->
-            <div 
-                
-            </div>
-            <p>90 seconds. 5 questions. Uncover one invisible bottleneck hiding in your operations.</p>
-        </header>
-
-        <!-- Crimson SVG divider between header and card -->
-        <div class="divider">
-            <svg width="200" height="12" viewBox="0 0 200 12" xmlns="http://www.w3.org/2000/svg">
-                <line x1="0" y1="6" x2="80" y2="6" stroke="#DC143C" stroke-width="2" stroke-dasharray="4 4"/>
-                <circle cx="100" cy="6" r="5" fill="#DC143C"/>
-                <line x1="120" y1="6" x2="200" y2="6" stroke="#DC143C" stroke-width="2" stroke-dasharray="4 4"/>
-            </svg>
-        </div>
-
-        <div class="self-check" id="quiz">
+        <div class="self-check-card" id="quiz">
             <form id="blindspotForm">
-                <!-- Questions unchanged -->
                 <div class="question">
                     <p>1. Does work routinely stall for more than 4 hours between handoffs (waiting for approval, clarification, or someone’s availability)?</p>
                     <div class="options">
@@ -483,98 +319,87 @@
                 <div class="question">
                     <p>5. Can you confidently state, right now, what percentage of your end‑to‑end lead time is pure waiting (not actual work)?</p>
                     <div class="options">
-                        <label><input type="radio" name="q5" value="1" required> Yes, I know the number</label>
-                        <label><input type="radio" name="q5" value="0"> No, I’m not sure</label>
+                        <label><input type="radio" name="q5" value="0" required> Yes, I know the number</label>
+                        <label><input type="radio" name="q5" value="1"> No, I’m not sure</label>
                     </div>
-                </div>
-
-                <!-- Another SVG divider before the button -->
-                <div class="section-divider">
-                    <svg width="100%" height="1" viewBox="0 0 100 1" preserveAspectRatio="none">
-                        <line x1="0" y1="0" x2="100" y2="0" stroke="#DC143C" stroke-width="1" stroke-dasharray="5 5"/>
-                    </svg>
                 </div>
 
                 <button type="submit" class="btn">Reveal My Blind Spot Score</button>
             </form>
 
             <div id="resultBox" class="result">
-                <!-- filled by JS -->
+                <!-- filled dynamically -->
             </div>
         </div>
+    </section>
 
-        <footer>
-            <p>
-                © 2026 Khiva Cheleigh, Topology Analyst &nbsp;|&nbsp;
-                <a href="index.html">Home</a> &nbsp;|&nbsp;
-                <a href="services.html">Services</a> &nbsp;|&nbsp;
-                <a href="bpmn-sample.html">BPMN Sample</a>
-            </p>
-            <p style="margin-top:0.5rem;">
-                <a href="mailto:kcheleigh.analyst@gmail.com">kcheleigh.analyst@gmail.com</a>
-            </p>
-        </footer>
+    <div class="footer">
+        &copy; 2026 Khiva Cheleigh. Sovereignty over structure. &nbsp;|&nbsp;
+        <a href="mailto:kcheleigh.analyst@gmail.com">kcheleigh.analyst@gmail.com</a>
     </div>
 
-    <script>
-        // Google Calendar booking link – replace with your own appointment schedule URL
-        const googleCalendarBookingLink = "https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID";
+</div>
 
-        document.getElementById('blindspotForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let score = 0;
-            const q1 = document.querySelector('input[name="q1"]:checked');
-            const q2 = document.querySelector('input[name="q2"]:checked');
-            const q3 = document.querySelector('input[name="q3"]:checked');
-            const q4 = document.querySelector('input[name="q4"]:checked');
-            const q5 = document.querySelector('input[name="q5"]:checked');
-            
-            if (!q1 || !q2 || !q3 || !q4 || !q5) {
-                alert('Please answer all questions to see your blind spot score.');
-                return;
-            }
-            
-            score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) +
-                    parseInt(q4.value) + parseInt(q5.value);
-            
-            const resultBox = document.getElementById('resultBox');
-            resultBox.classList.add('visible');
-            
-            let heading, message, ctaText, className;
-            
-            if (score <= 1) {
-                className = '';
-                heading = 'Low Blind Spot Risk – But Keep Digging';
-                message = 'Your process landscape looks relatively smooth. However, even in healthy systems, one hidden ridge can slow everything down. A 20‑minute Topographical Blind Spot Audit often reveals a subtle delay that nobody has measured yet.';
-                ctaText = 'Book Your Free 20‑Min Audit';
-            } else if (score <= 3) {
-                className = 'warning';
-                heading = 'Moderate Risk – At Least One Hidden Bottleneck Likely';
-                message = 'You’re showing classic signs of invisible waiting, shadow dependencies, or un‑mapped handoffs. In companies I analyze with similar profiles, 20–30% of process lead time vanishes into these blind spots. Let’s pinpoint yours.';
-                ctaText = 'Book a Free 20‑Min Blind Spot Audit';
-            } else {
-                className = 'critical';
-                heading = 'High Risk – Multiple Process Fractures Detected';
-                message = 'Your answers suggest tangled accountability, swampy handoffs, and unmeasured delays. This pattern typically costs organizations 35%+ of their throughput capacity without anyone seeing it. A 20‑minute audit will identify the #1 fracture and what it’s costing you.';
-                ctaText = 'Schedule Your Free 20‑Min Audit Now';
-            }
-            
-            resultBox.className = 'result visible ' + className;
-            resultBox.innerHTML = `
-                <h3>${heading}</h3>
-                <p>${message}</p>
-                <a href="${googleCalendarBookingLink}" target="_blank" class="booking-link">
-                    🔍 ${ctaText} →
-                </a>
-                <p style="font-size:0.85rem; margin-top:1rem; color:#000000;">
-                    No sales pitch. Just one sharp diagnostic insight, free.<br>
-                    <span style="font-size:0.8rem;">You’ll be directed to Google Calendar to pick a time that works for you.</span>
-                </p>
-            `;
-            
-            resultBox.scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
+<script>
+    // Replace this with your actual Google Calendar appointment schedule URL
+    const googleCalendarBookingLink = "https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID";
+
+    document.getElementById('blindspotForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let score = 0;
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        const q3 = document.querySelector('input[name="q3"]:checked');
+        const q4 = document.querySelector('input[name="q4"]:checked');
+        const q5 = document.querySelector('input[name="q5"]:checked');
+        
+        if (!q1 || !q2 || !q3 || !q4 || !q5) {
+            alert('Please answer all questions to see your blind spot score.');
+            return;
+        }
+        
+        score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) +
+                parseInt(q4.value) + parseInt(q5.value);
+        
+        const resultBox = document.getElementById('resultBox');
+        resultBox.classList.add('visible');
+        
+        let heading, message, ctaText, className;
+        
+        if (score <= 1) {
+            className = '';
+            heading = 'Low Blind Spot Risk – But Keep Digging';
+            message = 'Your process landscape looks relatively smooth. However, even in healthy systems, one hidden ridge can slow everything down. A 20‑minute Topographical Blind Spot Audit often reveals a subtle delay that nobody has measured yet.';
+            ctaText = 'Book Your Free 20‑Min Audit';
+        } else if (score <= 3) {
+            className = 'warning';
+            heading = 'Moderate Risk – At Least One Hidden Bottleneck Likely';
+            message = 'You’re showing classic signs of invisible waiting, shadow dependencies, or un‑mapped handoffs. In companies I analyze with similar profiles, 20–30% of process lead time vanishes into these blind spots. Let’s pinpoint yours.';
+            ctaText = 'Book a Free 20‑Min Blind Spot Audit';
+        } else {
+            className = 'critical';
+            heading = 'High Risk – Multiple Process Fractures Detected';
+            message = 'Your answers suggest tangled accountability, swampy handoffs, and unmeasured delays. This pattern typically costs organizations 35%+ of their throughput capacity without anyone seeing it. A 20‑minute audit will identify the #1 fracture and what it’s costing you.';
+            ctaText = 'Schedule Your Free 20‑Min Audit Now';
+        }
+        
+        resultBox.className = 'result visible ' + className;
+        resultBox.innerHTML = `
+            <h3>${heading}</h3>
+            <p>${message}</p>
+            <a href="${googleCalendarBookingLink}" target="_blank" class="booking-link">
+                🔍 ${ctaText} →
+            </a>
+            <p style="font-size:0.85rem; margin-top:1rem; opacity:0.8;">
+                No sales pitch. Just one sharp diagnostic insight, free.<br>
+                <span style="font-size:0.8rem;">You’ll be directed to Google Calendar to pick a time that works for you.</span>
+            </p>
+        `;
+        
+        resultBox.scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>

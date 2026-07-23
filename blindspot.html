@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Blind Spot Self‑Check | Khiva Cheleigh – Business Topology Analyst</title>
+    <title>Three Structural Forces Audit | Khiva Cheleigh – Business Topology Analyst</title>
     <style>
         :root {
             --text: #000000;
             --crimson: #8B1A1A;
             --subtle-border: #cccccc;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             position: relative;
             background-color: #ffffff;
@@ -28,10 +24,7 @@
         body::before {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('background.png');
             background-size: cover;
             background-position: center;
@@ -48,241 +41,93 @@
             padding: 3rem 2rem;
             min-height: 100vh;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 400;
-            letter-spacing: 0.03em;
-            color: var(--text);
-        }
-        h1 {
-            font-size: 2.8rem;
-            color: var(--crimson);
-            margin-bottom: 0.2rem;
-            letter-spacing: 0.06em;
-        }
+        h1, h2, h3 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; letter-spacing: 0.03em; color: var(--text); }
+        h1 { font-size: 2.8rem; color: var(--crimson); margin-bottom: 0.2rem; letter-spacing: 0.06em; }
         .subtitle {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 1.05rem;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            margin-bottom: 2.8rem;
-            font-weight: 400;
-            opacity: 0.8;
+            font-size: 1.05rem; color: var(--text); text-transform: uppercase;
+            letter-spacing: 0.22em; margin-bottom: 2.8rem; font-weight: 400; opacity: 0.8;
         }
-        /* Navigation */
         .top-nav {
             text-align: right;
             margin-bottom: 1.5rem;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
+            font-size: 0.85rem; letter-spacing: 0.05em;
         }
         .top-nav a {
-            color: var(--crimson);
-            text-decoration: none;
-            border-bottom: 1px solid var(--crimson);
-            margin-left: 1.5rem;
+            color: var(--crimson); text-decoration: none;
+            border-bottom: 1px solid var(--crimson); margin-left: 1.5rem;
         }
-        .top-nav a.active {
-            font-weight: 600;
-            border-bottom: 2px solid var(--crimson);
-        }
-        section {
-            margin-bottom: 2.8rem;
-        }
-        .divider {
-            margin: 2.8rem 0;
-        }
+        .top-nav a.active { font-weight: 600; border-bottom: 2px solid var(--crimson); }
+        section { margin-bottom: 2.8rem; }
+        .divider { margin: 2.8rem 0; }
         h2 {
-            font-size: 1.05rem;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 1rem;
-            font-weight: 400;
+            font-size: 1.05rem; color: var(--text); text-transform: uppercase;
+            letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 400;
             border-bottom: 1px solid var(--crimson);
-            display: inline-block;
-            padding-bottom: 0.3rem;
+            display: inline-block; padding-bottom: 0.3rem;
         }
-        p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            color: var(--text);
-            opacity: 0.95;
-        }
-        a {
-            color: var(--crimson);
-            text-decoration: none;
-            border-bottom: 1px solid var(--crimson);
-            transition: opacity 0.2s ease;
-        }
-        a:hover {
-            opacity: 0.8;
-        }
-        .logo {
-            display: block;
-            max-width: 160px;
-            height: auto;
-            margin-bottom: 1.2rem;
-        }
-        .divider svg {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+        p { margin-bottom: 1.2rem; font-size: 1.05rem; color: var(--text); opacity: 0.95; }
+        a { color: var(--crimson); text-decoration: none; border-bottom: 1px solid var(--crimson); transition: opacity 0.2s ease; }
+        a:hover { opacity: 0.8; }
+        .logo { display: block; max-width: 160px; height: auto; margin-bottom: 1.2rem; }
+        .divider svg { display: block; width: 100%; height: auto; }
 
-        /* Quiz-specific styles */
-        .self-check-card {
+        /* Audit card */
+        .audit-card {
             background: #ffffff;
             border: 1px solid var(--crimson);
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-        }
-        .question {
             margin-bottom: 2rem;
         }
-        .question p {
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-            color: var(--text);
-            opacity: 1;
-            font-family: Georgia, serif;
+        .force-section { margin-bottom: 2.5rem; }
+        .stress-test { background: #f9f9f9; border-left: 4px solid var(--crimson); padding: 1.2rem 1.5rem; margin: 1.2rem 0; }
+        .stress-test p { margin-bottom: 0.8rem; font-weight: 600; }
+        label { display: block; margin: 0.8rem 0 0.4rem; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; color: #555; }
+        input, textarea {
+            width: 100%; padding: 0.7rem; font-family: Georgia, serif; font-size: 1rem;
+            border: 1px solid #ccc; background: white; color: var(--text); margin-bottom: 0.8rem;
         }
-        .options {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
+        input:focus, textarea:focus { outline: 1px solid var(--crimson); }
+        .btn {
+            display: inline-block; background: var(--crimson); color: #ffffff;
+            border: none; padding: 0.8rem 2rem; font-size: 1rem; font-weight: 400;
+            border-radius: 6px; cursor: pointer; transition: opacity 0.2s;
+            text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: 0.05em; margin-top: 1rem;
         }
-        .options label {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            cursor: pointer;
-            padding: 0.5rem 1.2rem;
-            border-radius: 6px;
-            border: 1px solid var(--subtle-border);
-            transition: all 0.2s;
-            color: var(--text);
-            font-family: Georgia, serif;
-            font-size: 0.95rem;
-        }
-        .options label:hover {
-            border-color: var(--crimson);
+        .btn:hover { opacity: 0.85; }
+
+        .result-box {
+            margin-top: 2rem; padding: 1.5rem; border-radius: 8px;
+            display: none; font-family: Georgia, serif; border: 1px solid var(--crimson);
             background: rgba(139,26,26,0.03);
         }
-        .options input[type="radio"] {
-            accent-color: var(--crimson);
-        }
-        .btn {
-            display: inline-block;
-            background: var(--crimson);
-            color: #ffffff;
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            font-weight: 400;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-            text-align: center;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            letter-spacing: 0.05em;
-        }
-        .btn:hover {
-            opacity: 0.85;
-        }
-        .result {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            border-radius: 8px;
-            display: none;
-            color: var(--text);
-            font-family: Georgia, serif;
-        }
-        .result.visible {
-            display: block;
-        }
-        .result.warning {
-            background: #FFF8E1;
-            border: 1px solid #FFA000;
-        }
-        .result.critical {
-            background: #FFEBEE;
-            border: 1px solid var(--crimson);
-        }
-        .result h3 {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 400;
-            margin-bottom: 0.8rem;
-            color: var(--crimson);
-        }
-        .booking-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--crimson);
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid var(--crimson);
-        }
-
-        /* Form section container */
-        .form-card {
-            background: #ffffff;
-            border: 1px solid var(--crimson);
-            border-radius: 8px;
-            padding: 1.5rem 1.5rem 0 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            overflow: hidden;
-            margin-top: 2.5rem;
-        }
-        .form-card iframe {
-            display: block;
-            width: 100%;
-            height: 800px;
-            border: none;
-        }
+        .result-box.visible { display: block; }
 
         .footer {
-            margin-top: 4rem;
-            font-size: 0.8rem;
-            opacity: 0.6;
-            letter-spacing: 0.05em;
-            text-align: center;
+            margin-top: 4rem; font-size: 0.8rem; opacity: 0.6;
+            letter-spacing: 0.05em; text-align: center;
         }
         @media (max-width: 500px) {
-            .page-content {
-                padding: 2rem 1.5rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            .logo {
-                max-width: 130px;
-            }
-            .self-check-card {
-                padding: 1.5rem;
-            }
-            .form-card iframe {
-                height: 1000px;
-            }
+            .page-content { padding: 2rem 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .logo { max-width: 130px; }
+            .audit-card { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
-
 <div class="page-content">
 
-    <!-- Navigation -->
     <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services &amp; Paywall</a>
         <a href="cartographer.html">Cartographer's Compass</a>
         <a href="bpmn-sample.html">BPMN Sample</a>
-        <a href="blindspot.html" class="active">Blind Spot Self‑Check</a>
+        <a href="blindspot.html" class="active">Structural Audit</a>
         <a href="process-check.html">Process Quick Check</a>
     </nav>
 
@@ -302,143 +147,122 @@
     </div>
 
     <section>
-        <h2>Process Blind Spot Self‑Check</h2>
-        <p style="margin-bottom:2rem;">90 seconds. 5 questions. Uncover one invisible bottleneck hiding in your operations.</p>
+        <h2>The Three Structural Forces Audit</h2>
+        <p>Every business is a bridge. Revenue flow, hidden leverage, and relationship connections hold it up — and silently crack it. This audit is the same map I use to expose liabilities. Answer the stress tests below, and I’ll show you which pillar is most fragile.</p>
+    </section>
 
-        <div class="self-check-card" id="quiz">
-            <form id="blindspotForm">
-                <div class="question">
-                    <p>1. Does work routinely stall for more than 4 hours between handoffs (waiting for approval, clarification, or someone’s availability)?</p>
-                    <div class="options">
-                        <label><input type="radio" name="q1" value="1" required> Yes</label>
-                        <label><input type="radio" name="q1" value="0"> No</label>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>2. Are there one or two people who constantly get pulled into decisions or escalations, even if they aren’t formally accountable?</p>
-                    <div class="options">
-                        <label><input type="radio" name="q2" value="1" required> Yes</label>
-                        <label><input type="radio" name="q2" value="0"> No</label>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>3. Do you suspect critical steps are being done in spreadsheets, shadow systems, or manual workarounds that nobody officially tracks?</p>
-                    <div class="options">
-                        <label><input type="radio" name="q3" value="1" required> Yes</label>
-                        <label><input type="radio" name="q3" value="0"> No</label>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>4. If your main revenue process were a landscape, would you say there are “swamps” where items get stuck or disappear?</p>
-                    <div class="options">
-                        <label><input type="radio" name="q4" value="1" required> Yes</label>
-                        <label><input type="radio" name="q4" value="0"> No</label>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>5. Can you confidently state, right now, what percentage of your end‑to‑end lead time is pure waiting (not actual work)?</p>
-                    <div class="options">
-                        <label><input type="radio" name="q5" value="0" required> Yes, I know the number</label>
-                        <label><input type="radio" name="q5" value="1"> No, I’m not sure</label>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn">Reveal My Blind Spot Score</button>
-            </form>
-
-            <div id="resultBox" class="result">
-                <!-- filled dynamically -->
+    <div class="audit-card" id="auditForm">
+        <!-- Revenue Flow Stress Test -->
+        <div class="force-section">
+            <h3>1. Revenue Flow Stress Test</h3>
+            <p>If your three largest clients paid 30 days late, what would happen? Would you miss payroll? Break a supplier agreement? Write it down — the answer is your cash‑gap fracture.</p>
+            <div class="stress-test">
+                <p><strong>Quick diagnostic:</strong></p>
+                <label for="paymentTerms">Client payment terms (days)</label>
+                <input type="number" id="paymentTerms" placeholder="e.g., 30, 60" min="0">
+                <label for="supplierTerms">Supplier payment terms (days)</label>
+                <input type="number" id="supplierTerms" placeholder="e.g., 14, 30" min="0">
+                <label for="cashReserves">Cash reserves (months of expenses)</label>
+                <input type="number" id="cashReserves" placeholder="e.g., 1.5" step="0.1" min="0">
             </div>
         </div>
-    </section>
 
-    <!-- Google Form section -->
-    <section>
-        <h2>Request a Free Topology Snapshot</h2>
-        <p>Already know something is off? Fill out the form below and I’ll send you a one‑page map of a single friction point in your business, built from public data. No cost, no pitch.</p>
-
-        <div class="form-card">
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdkOtAZXKyCrf-jvzqRxRv4lbaTOJVfDg9mW--38d48G4HKYg/viewform?embedded=true"
-                width="100%"
-                height="800"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">
-                Loading…
-            </iframe>
+        <!-- Leverage Stress Test -->
+        <div class="force-section">
+            <h3>2. Tension‑Based Leverage Stress Test</h3>
+            <p>Calculate your fixed monthly nut (rent, salaries, software you can’t cancel quickly). Divide it by your average monthly revenue. If that number is over 60% and you have less than a month of cash, you are structurally tense.</p>
+            <div class="stress-test">
+                <p><strong>Quick diagnostic:</strong></p>
+                <label for="fixedCosts">Fixed monthly costs ($)</label>
+                <input type="number" id="fixedCosts" placeholder="e.g., 12000" min="0">
+                <label for="avgRevenue">Average monthly revenue ($)</label>
+                <input type="number" id="avgRevenue" placeholder="e.g., 20000" min="0">
+            </div>
         </div>
-    </section>
+
+        <!-- Relationship Stress Test -->
+        <div class="force-section">
+            <h3>3. Relationship Connection Stress Test</h3>
+            <p>What percentage of your total revenue comes from your single biggest customer? If it’s over 30%, you are structurally dependent on a single bolt.</p>
+            <div class="stress-test">
+                <p><strong>Quick diagnostic:</strong></p>
+                <label for="bigClientPct">Revenue from largest client (%)</label>
+                <input type="number" id="bigClientPct" placeholder="e.g., 45" min="0" max="100">
+                <label for="keyPersonRisk">Do you have a single employee whose absence would halt operations?</label>
+                <select id="keyPersonRisk">
+                    <option value="">— Select —</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="button" class="btn" onclick="runAudit()">Reveal My Structural Risk</button>
+        <div id="resultBox" class="result-box"></div>
+    </div>
 
     <div class="footer">
         &copy; 2026 Khiva Cheleigh. Sovereignty over structure. &nbsp;|&nbsp;
         <a href="mailto:kcheleigh.analyst@gmail.com">kcheleigh.analyst@gmail.com</a>
     </div>
-
 </div>
 
 <script>
-    // Google Calendar booking link for the quiz
-    var googleCalendarBookingLink = "https://calendar.app.google/yefwWVK3DqJchgpC7";
+    function runAudit() {
+        // Get values
+        const paymentTerms = parseFloat(document.getElementById('paymentTerms').value) || 0;
+        const supplierTerms = parseFloat(document.getElementById('supplierTerms').value) || 0;
+        const cashReserves = parseFloat(document.getElementById('cashReserves').value) || 0;
+        const fixedCosts = parseFloat(document.getElementById('fixedCosts').value) || 0;
+        const avgRevenue = parseFloat(document.getElementById('avgRevenue').value) || 0;
+        const bigClientPct = parseFloat(document.getElementById('bigClientPct').value) || 0;
+        const keyPersonRisk = document.getElementById('keyPersonRisk').value;
 
-    document.getElementById('blindspotForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        var q1 = document.querySelector('input[name="q1"]:checked');
-        var q2 = document.querySelector('input[name="q2"]:checked');
-        var q3 = document.querySelector('input[name="q3"]:checked');
-        var q4 = document.querySelector('input[name="q4"]:checked');
-        var q5 = document.querySelector('input[name="q5"]:checked');
-        
-        if (!q1 || !q2 || !q3 || !q4 || !q5) {
-            alert('Please answer all questions to see your blind spot score.');
-            return;
-        }
-        
-        var score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) +
-                    parseInt(q4.value) + parseInt(q5.value);
-        
-        var resultBox = document.getElementById('resultBox');
+        // Risk calculations
+        let riskFactors = [];
+        let revenueRisk = 0;
+        let leverageRisk = 0;
+        let relationshipRisk = 0;
+
+        // Revenue flow risk
+        if (paymentTerms > 45) { revenueRisk += 2; riskFactors.push("Client payment terms exceed 45 days"); }
+        if (supplierTerms < 21 && paymentTerms > supplierTerms) { revenueRisk += 2; riskFactors.push("You pay suppliers faster than clients pay you"); }
+        if (cashReserves < 1) { revenueRisk += 3; riskFactors.push("Less than 1 month of cash reserves"); }
+
+        // Leverage risk
+        const fixedCostRatio = avgRevenue ? (fixedCosts / avgRevenue) * 100 : 0;
+        if (fixedCostRatio > 60) { leverageRisk += 3; riskFactors.push("Fixed costs are over 60% of revenue"); }
+        if (fixedCostRatio > 70) { leverageRisk += 2; riskFactors.push("Fixed costs exceed 70% — extreme tension"); }
+
+        // Relationship risk
+        if (bigClientPct > 30) { relationshipRisk += 3; riskFactors.push("Single client concentration over 30%"); }
+        if (bigClientPct > 50) { relationshipRisk += 3; riskFactors.push("Single client over 50% — critical dependency"); }
+        if (keyPersonRisk === 'yes') { relationshipRisk += 2; riskFactors.push("Key‑person dependency identified"); }
+
+        // Determine most fragile pillar
+        let maxRisk = Math.max(revenueRisk, leverageRisk, relationshipRisk);
+        let primaryFracture = '';
+        if (maxRisk === revenueRisk && revenueRisk > 0) primaryFracture = 'Revenue Flow';
+        else if (maxRisk === leverageRisk && leverageRisk > 0) primaryFracture = 'Tension‑Based Leverage';
+        else if (maxRisk === relationshipRisk && relationshipRisk > 0) primaryFracture = 'Relationship Connections';
+        else primaryFracture = 'No clear single fracture — but still worth a deeper look';
+
+        // Build result message
+        const resultBox = document.getElementById('resultBox');
         resultBox.classList.add('visible');
-        
-        var heading, message, ctaText, className;
-        
-        if (score <= 1) {
-            className = '';
-            heading = 'Low Blind Spot Risk – But Keep Digging';
-            message = 'Your process landscape looks relatively smooth. However, even in healthy systems, one hidden ridge can slow everything down. A 20‑minute Topographical Blind Spot Audit often reveals a subtle delay that nobody has measured yet.';
-            ctaText = 'Book Your Free 20‑Min Audit';
-        } else if (score <= 3) {
-            className = 'warning';
-            heading = 'Moderate Risk – At Least One Hidden Bottleneck Likely';
-            message = 'You’re showing classic signs of invisible waiting, shadow dependencies, or un‑mapped handoffs. In companies I analyze with similar profiles, 20–30% of process lead time vanishes into these blind spots. Let’s pinpoint yours.';
-            ctaText = 'Book a Free 20‑Min Blind Spot Audit';
+        let html = '<h3 style="color:var(--crimson);">Structural Risk Assessment</h3>';
+        html += '<p><strong>Primary Fracture:</strong> ' + primaryFracture + '</p>';
+        if (riskFactors.length > 0) {
+            html += '<p><strong>Risk signals detected:</strong></p><ul>';
+            riskFactors.forEach(f => html += '<li>' + f + '</li>');
+            html += '</ul>';
         } else {
-            className = 'critical';
-            heading = 'High Risk – Multiple Process Fractures Detected';
-            message = 'Your answers suggest tangled accountability, swampy handoffs, and unmeasured delays. This pattern typically costs organizations 35%+ of their throughput capacity without anyone seeing it. A 20‑minute audit will identify the #1 fracture and what it’s costing you.';
-            ctaText = 'Schedule Your Free 20‑Min Audit Now';
+            html += '<p>No immediate structural red flags from these metrics. But fractures often hide where you don’t look.</p>';
         }
-        
-        resultBox.className = 'result visible ' + className;
-        
-        resultBox.innerHTML =
-            '<h3>' + heading + '</h3>' +
-            '<p>' + message + '</p>' +
-            '<a href="' + googleCalendarBookingLink + '" target="_blank" class="booking-link">' +
-            '🔍 ' + ctaText + ' →' +
-            '</a>' +
-            '<p style="font-size:0.85rem; margin-top:1rem; opacity:0.8;">' +
-            'No sales pitch. Just one sharp diagnostic insight, free.<br>' +
-            '<span style="font-size:0.8rem;">You’ll be directed to Google Calendar to pick a time that works for you.</span>' +
-            '</p>';
-        
+        html += '<p>This is a surface stress test. For the full forensic map — the exact topology of your revenue, leverage, and relationship fractures — <a href="mailto:kcheleigh.analyst@gmail.com?subject=Full%20Structural%20Audit%20Request">request a full audit</a>. I will personally review your responses and outline the next step.</p>';
+        resultBox.innerHTML = html;
         resultBox.scrollIntoView({ behavior: 'smooth' });
-    });
+    }
 </script>
 
 </body>

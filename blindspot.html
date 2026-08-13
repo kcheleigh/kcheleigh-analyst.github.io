@@ -3,64 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Structural Forces Audit | Khiva Cheleigh – Business Topology Analyst</title>
+    <title>Free Structural Risk Review | Khiva Cheleigh</title>
     <style>
-        :root {
-            --text: #000000;
-            --crimson: #8B1A1A;
-            --subtle-border: #cccccc;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            position: relative;
-            background-color: #ffffff;
-            color: var(--text);
-            font-family: Georgia, 'Times New Roman', serif;
-            font-weight: 400;
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-            min-height: 100vh;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            z-index: -1;
-        }
-        .page-content {
-            position: relative;
-            z-index: 1;
-            background-color: rgba(255,255,255,0.88);
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-            min-height: 100vh;
-        }
-        h1, h2, h3 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; letter-spacing: 0.03em; color: var(--text); }
-        h1 { font-size: 2.8rem; color: var(--crimson); margin-bottom: 0.2rem; letter-spacing: 0.06em; }
-        .subtitle {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 1.05rem; color: var(--text); text-transform: uppercase;
-            letter-spacing: 0.22em; margin-bottom: 2.8rem; font-weight: 400; opacity: 0.8;
-        }
-        .top-nav {
-            text-align: right;
-            margin-bottom: 1.5rem;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 0.85rem; letter-spacing: 0.05em;
-        }
-        .top-nav a {
-            color: var(--crimson); text-decoration: none;
-            border-bottom: 1px solid var(--crimson); margin-left: 1.5rem;
-        }
-        .top-nav a.active { font-weight: 600; border-bottom: 2px solid var(--crimson); }
-        section { margin-bottom: 2.8rem; }
-        .divider { margin: 2.8rem 0; }
+        /* Same base styles as homepage */
+        :root { --text:#000; --crimson:#8B1A1A; }
+        body { font-family: Georgia, serif; background:#fff; color:var(--text); line-height:1.7; margin:0; padding:0; }
+        .page-content { max-width:960px; margin:0 auto; padding:3rem 2rem; }
+        h1 { font-family: Helvetica, Arial, sans-serif; color:var(--crimson); font-size:2.2rem; }
+        .subtitle { font-family: Helvetica, Arial, sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:1rem; opacity:0.8; margin-bottom:2rem; }
+        label { display:block; margin:1rem 0 0.3rem; font-family: Helvetica, Arial, sans-serif; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; }
+        input, textarea, select { width:100%; padding:0.7rem; font-family: Georgia, serif; font-size:1rem; border:1px solid #ccc; }
+        button { background:var(--crimson); color:#fff; border:none; padding:0.8rem 2rem; font-family: Helvetica, Arial, sans-serif; font-size:1rem; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; }
+        .footer { margin-top:3rem; font-size:0.8rem; opacity:0.6; text-align:center; }
+    </style>
+</head>
+<body>
+<div class="page-content">
+    <h1>Free Structural Risk Review</h1>
+    <div class="subtitle">Find your biggest business vulnerability in 20 minutes</div>
+
+    <p>Answer these three questions honestly. I will review your answers and send you a one‑page map of your most critical structural risk.</p>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="revenue">Approximate Annual Revenue</label>
+        <select id="revenue" name="revenue" required>
+            <option value="">— Select —</option>
+            <option value="under-250k">Under $250k</option>
+            <option value="250k-500k">$250k – $500k</option>
+            <option value="500k-1m">$500k – $1M</option>
+            <option value="over-1m">Over $1M</option>
+        </select>
+
+        <label>1. If your three largest customers paid 30 days late, what would happen?</label>
+        <textarea name="cash_risk" rows="2" required></textarea>
+
+        <label>2. What is your fixed monthly cost (rent, salaries, software you can’t cancel quickly) as a percentage of average monthly revenue?</label>
+        <textarea name="leverage_risk" rows="2" required></textarea>
+
+        <label>3. What percentage of your total revenue comes from your single largest client?</label>
+        <textarea name="relationship_risk" rows="2" required></textarea>
+
+        <button type="submit">Send My Answers</button>
+    </form>
+
+    <p style="margin-top:2rem;">Prefer to talk directly? <a href="mailto:kcheleigh.analyst@gmail.com">kcheleigh.analyst@gmail.com</a></p>
+
+    <div class="footer">&copy; 2026 Khiva Cheleigh. Sovereignty over structure.</div>
+</div>
+</body>
+</html>        .divider { margin: 2.8rem 0; }
         h2 {
             font-size: 1.05rem; color: var(--text); text-transform: uppercase;
             letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 400;

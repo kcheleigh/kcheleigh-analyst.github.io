@@ -48,6 +48,12 @@
             font-size: 1rem; color: var(--text); text-transform: uppercase;
             letter-spacing: 0.2em; margin-bottom: 2.5rem; font-weight: 400; opacity: 0.8;
         }
+        .logo {
+            display: block;
+            max-width: 160px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
         .cta-button {
             display: inline-block; background: var(--crimson); color: #fff;
             padding: 0.8rem 2rem; text-decoration: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -61,10 +67,16 @@
         .footer {
             margin-top: 4rem; font-size: 0.8rem; opacity: 0.6; letter-spacing: 0.05em; text-align: center;
         }
+        @media (max-width: 500px) {
+            .page-content { padding: 2rem 1.5rem; }
+            h1 { font-size: 2rem; }
+            .logo { max-width: 130px; }
+        }
     </style>
 </head>
 <body>
 <div class="page-content">
+    <img src="KCCLogo.svg" alt="Khiva Cheleigh Logo" class="logo">
     <h1>Khiva Cheleigh</h1>
     <div class="subtitle">Structural Risk Mapping for Small Business</div>
 
